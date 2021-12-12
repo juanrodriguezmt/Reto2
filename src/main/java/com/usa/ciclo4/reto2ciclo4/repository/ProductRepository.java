@@ -32,4 +32,8 @@ public class ProductRepository {
     public void delete(Product product){
         productCrudRepository.delete(product);
     }
+    
+    public List<Product> productByPrice(double precio) {
+	return productCrudRepository.findByPriceLessThanEqual(precio);
+}
 }

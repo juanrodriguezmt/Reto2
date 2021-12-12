@@ -74,4 +74,8 @@ public class ProductService {
         }).orElse(false);
         return aboolean;
     }
+    
+    public List<Product> productByPrice(double price) {
+        return productRepository.productByPrice(price);
+    }
 }

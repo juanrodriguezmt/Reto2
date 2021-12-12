@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/user")
@@ -48,7 +49,12 @@ public class UserController {
     public User update(@RequestBody User user){
         return userService.update(user);
     }
-
+    
+    @GetMapping("/{id}")
+    public Optional <User> getUser(@PathVariable("id") int id) {
+        return userService.getUser(id);
+    }
+    
     @DeleteMapping("/{id}")
     /**
 	* método para eliminar usuario
