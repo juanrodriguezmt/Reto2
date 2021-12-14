@@ -49,6 +49,17 @@ public class OrderRepository {
         return orderCrudRepository.findByZone(zona);
     }
 
+    public List<Order> ordersSalesManByID(Integer id) {
+
+        Query query = new Query();
+        Criteria dateCriteria = Criteria.where("salesMan.id").is(id);
+
+        query.addCriteria(dateCriteria);
+        List<Order> orders = mongoTemplate.find(query, Order.class);
+
+        return orders;
+    }
+    
     public List<Order> ordersSalesManByDate(String dateStr, Integer id) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
