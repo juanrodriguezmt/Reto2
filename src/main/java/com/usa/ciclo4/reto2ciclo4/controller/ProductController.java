@@ -45,7 +45,7 @@ public class ProductController {
     }
     
     @GetMapping("/description/{description}")
-    public List<Vegetarian> findByDescriptionLike(@PathVariable("description") String description) {
+    public List<Product> findByDescriptionLike(@PathVariable("description") String description) {
         return accessoryService.findByDescriptionLike(description);
     }
 
