@@ -43,5 +43,10 @@ public class ProductController {
     public boolean delete(@PathVariable("reference") String reference){
         return productService.delete(reference);
     }
+    
+    @GetMapping("/description/{description}")
+    public List<Vegetarian> findByDescriptionLike(@PathVariable("description") String description) {
+        return accessoryService.findByDescriptionLike(description);
+    }
 
 }
