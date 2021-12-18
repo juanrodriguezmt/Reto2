@@ -4,6 +4,8 @@ import com.usa.ciclo4.reto2ciclo4.model.User;
 import com.usa.ciclo4.reto2ciclo4.repository.crud.UserCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.data.mongodb.core.MongoTemplate;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -44,5 +46,8 @@ public class UserRepository {
 
     public Optional<User> getUserByNameOrEmail(String name, String email){
         return userCrudRepository.findByNameOrEmail(name, email);
+    }
+    public List<User> birthtDayList(String monthBirthtDay) {
+        return userCrudRepository.findByMonthBirthtDay(monthBirthtDay);
     }
 }
