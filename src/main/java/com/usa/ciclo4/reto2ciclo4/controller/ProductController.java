@@ -46,12 +46,12 @@ public class ProductController {
     
     @GetMapping("/price/{price}")
     public List<Product> productByPrice(@PathVariable("price") double precio) {
-        return accessoryService.productByPrice(precio);
+        return productService.productByPrice(precio);
     }
     
     @GetMapping("/description/{description}")
     public List<Product> findByDescriptionLike(@PathVariable("description") String description) {
-        return accessoryService.findByDescriptionLike(description);
+        return productService.findByDescriptionLike(description);
     }
 
 }
