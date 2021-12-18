@@ -76,4 +76,12 @@ public class UserController {
     public boolean emailexists (@PathVariable("email") String email){
         return userService.emailExists(email);
     }
+	
+    @GetMapping("/birthday/{month}")
+    /**
+        * método para validar email de usuario
+        */
+    public List<User> birthtDayList(@PathVariable("month") String monthBirthtDay) {
+        return userService.birthtDayList(monthBirthtDay);
+    }
 }
