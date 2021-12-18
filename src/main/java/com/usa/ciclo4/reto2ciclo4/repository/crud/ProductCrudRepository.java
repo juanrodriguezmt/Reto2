@@ -9,6 +9,6 @@ public interface ProductCrudRepository extends MongoRepository<Product,String> {
 
     public List<Product> findByPriceLessThanEqual(double precio);
     @Query("{'description':{'$regex':'?0','$options':'i'}}")
-    public List<Vegetarian> findByDescriptionLike(String description);
+    public List<Product> findByDescriptionLike(String description);
 
 }
