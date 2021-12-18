@@ -45,7 +45,7 @@ public class ProductController {
     }
     
     @GetMapping("/price/{price}")
-    public List<Vegetarian> productByPrice(@PathVariable("price") double precio) {
+    public List<Product> productByPrice(@PathVariable("price") double precio) {
         return accessoryService.productByPrice(precio);
     }
     
