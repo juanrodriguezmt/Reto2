@@ -4,9 +4,13 @@ import com.usa.ciclo4.reto2ciclo4.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;
+import java.util.Date;
+import java.util.List;
 
 public interface UserCrudRepository extends MongoRepository<User,Integer> {
     Optional<User> findByEmail(String email);
     Optional<User> findByEmailAndPassword(String email, String password);
     Optional<User> findByNameOrEmail(String name, String email);
+    List<User> findByMonthBirthtDay(String monthBirthtDay);
+    List<User> findBybirthtDay(Date date);
 }
